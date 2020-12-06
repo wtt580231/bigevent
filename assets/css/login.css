@@ -28,6 +28,10 @@ body {
     display: none;
 }
 
+.layui-form {
+    padding: 0 10px;
+}
+
 .links {
     display: flex;
     justify-content: flex-end;

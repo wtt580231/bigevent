@@ -76,13 +76,13 @@
 
 $(function() {
     // 点击“去注册账号”的链接
-    $('#link_reg').on('click', function() {
+    $('#link-reg').on('click', function() {
         $('.login-box').hide()
         $('.reg-box').show()
     })
 
     // 点击“去登录”的链接
-    $('#link_login').on('click', function() {
+    $('#link-login').on('click', function() {
         $('.login-box').show()
         $('.reg-box').hide()
     })
@@ -108,13 +108,13 @@ $(function() {
     })
 
     // 监听注册表单的提交事件
-    $('#form_reg').on('submit', function(e) {
+    $('#form-reg').on('submit', function(e) {
         // 1. 阻止默认的提交行为
         e.preventDefault()
             // 2. 发起Ajax的POST请求
         var data = {
-            username: $('#form_reg [name=username]').val(),
-            password: $('#form_reg [name=password]').val()
+            username: $('#form-reg [name=username]').val(),
+            password: $('#form-reg [name=password]').val()
         }
         $.post('/api/reguser', data, function(res) {
             if (res.status !== 0) {
@@ -122,12 +122,12 @@ $(function() {
             }
             layer.msg('注册成功，请登录！')
                 // 模拟人的点击行为
-            $('#link_login').click()
+            $('#link-login').click()
         })
     })
 
     // 监听登录表单的提交事件
-    $('#form_login').submit(function(e) {
+    $('#form-login').submit(function(e) {
         // 阻止默认提交行为
         e.preventDefault()
         $.ajax({
@@ -143,7 +143,7 @@ $(function() {
                     // 将登录成功得到的 token 字符串，保存到 localStorage 中
                 localStorage.setItem('token', res.token)
                     // 跳转到后台主页
-                location.href = '../index.html'
+                location.href = '/index.html'
             }
         })
     })

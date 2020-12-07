@@ -15,6 +15,7 @@ $(function() {
     // 从layui中获取form对象
     var form = layui.form
     var layer = layui.layer
+    layer.msg('注册成功，请登录！')
         // 通过 form.verify()函数自定义校验规则
     form.verify({
         // 自定义一个叫做pwd校验规则(写在了密码框中的lay-verify中)
